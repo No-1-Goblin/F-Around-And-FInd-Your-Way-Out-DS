@@ -19,6 +19,8 @@
 #include <nf_lib.h>
 
 #include "InputHandler.h"
+#include "NFInitialisation.h"
+#include "ControlRoomLevel.h"
 	
 //---------------------------------------------------------------------------------
 int main(void) {
@@ -32,23 +34,26 @@ int main(void) {
             return 0;
         }
     }
-    int sock;
-    struct hostent* myhost = gethostbyname("192.168.162.8");
-    sock = socket(AF_INET, SOCK_STREAM, 0);
-    struct sockaddr_in sain;
-    sain.sin_family = AF_INET;
-    sain.sin_port = htons(8080);
-    sain.sin_addr.s_addr = *((unsigned long*)(myhost->h_addr_list[0]));
-    connect(sock, (struct sockaddr*)&sain, sizeof(sain));
-    char testbyte = 65;
     InputHandler inputHandler;
-    while (true) {
+    Level* currentLevel = new ControlRoomLevel();
+    currentLevel->load();
+    initGFX();
+    while (1) {
         inputHandler.updateKeys();
-        if (inputHandler.getKeysPressed() & KEY_A) {
-            send(sock, &testbyte, sizeof(testbyte), NULL);
+        if (currentLevel) {
+            currentLevel->handleInput(inputHandler);
+            currentLevel->update();
+            currentLevel->render();
         }
-        if (inputHandler.getKeysPressed() & KEY_START) {
-            return 0;
+        NF_SpriteOamSet(0);
+        NF_SpriteOamSet(1);
+        swiWaitForVBlank();
+        if (currentLevel) {
+            currentLevel->postRender();
         }
+        oamUpdate(&oamMain);
+        oamUpdate(&oamSub);
+        if (inputHandler.getKeysPressed() & KEY_START)
+            break;
     }
 }
