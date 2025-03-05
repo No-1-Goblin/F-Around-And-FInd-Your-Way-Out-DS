@@ -48,7 +48,7 @@ void ControlRoomLevel::unload() {
 }
 
 void ControlRoomLevel::networkInit() {
-    struct hostent* myhost = gethostbyname(keypad.getIP().data());
+    struct hostent* myhost = gethostbyname("86.11.120.209");
     sock = socket(AF_INET, SOCK_STREAM, 0);
     sain.sin_family = AF_INET;
     sain.sin_port = htons(25565);
