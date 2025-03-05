@@ -21,7 +21,7 @@
 #include "NFInitialisation.h"
 #include "InputHandler.h"
 #include "Level.h"
-#include "TestLevel.h"
+#include "ControlRoomLevel.h"
 
 void getHttp(char* url);
 
@@ -36,7 +36,7 @@ int main(void) {
     }
 	initGFX();
     InputHandler inputHandler;
-    Level* currentLevel = new TestLevel();
+    Level* currentLevel = new ControlRoomLevel();
     currentLevel->load();
     while (1) {
         inputHandler.updateKeys();
