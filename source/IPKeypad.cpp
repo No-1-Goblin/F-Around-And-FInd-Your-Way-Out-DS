@@ -34,7 +34,7 @@ void IPKeyPad::handleInput(InputHandler &input) {
         Vector2f pos = Vector2f(touch.px, touch.py);
         for (int i = 0; i < collisionBoxes.size(); i++) {
             if (collisionBoxes[i].checkCollision(pos)) {
-                if (ip.length() < 15) {
+                if (ip.length() < 15 || i == 10) {
                     if (i <= 9) {
                         ip.append(std::to_string(i));
                     } else if (i == 10) {
