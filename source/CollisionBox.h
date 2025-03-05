@@ -14,4 +14,4 @@ class CollisionBox {
     protected:
         Vector2f topLeft;
         Vector2f size;
-}
+};
