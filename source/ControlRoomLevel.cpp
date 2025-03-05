@@ -1,7 +1,7 @@
 #include "ControlRoomLevel.h"
 
 void ControlRoomLevel::load() {
-    levelSize.x = 512;
+    levelSize.x = 256;
     levelSize.y = 256;
     NF_LoadTiledBg("bg/TestMap", "TopScreenBG", levelSize.x, levelSize.y);
     NF_CreateTiledBg(0, 3, "TopScreenBG");
