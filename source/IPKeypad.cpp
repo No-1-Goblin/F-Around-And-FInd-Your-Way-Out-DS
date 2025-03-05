@@ -19,7 +19,7 @@ void IPKeyPad::load(int spriteRamId, int palRamId, int spriteVramId, int palVram
     }
     NF_CreateSprite(screenId, startSprId + 10, sprVramId, plVramId, position.x, position.y + 96);
     NF_SpriteFrame(screenId, startSprId + 10, 10);
-    NF_CreateSprite(screenId, startSprId + 11, sprVramId, plVramId, position.x + 96, position.y + 64);
+    NF_CreateSprite(screenId, startSprId + 11, sprVramId, plVramId, position.x + 64, position.y + 96);
     NF_SpriteFrame(screenId, startSprId + 11, 11);
 }
 
