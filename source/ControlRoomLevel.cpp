@@ -5,19 +5,24 @@ void ControlRoomLevel::load() {
     levelSize.y = 256;
     NF_LoadTiledBg("bg/TopScreenBG", "TopScreenBG", levelSize.x, levelSize.y);
     NF_CreateTiledBg(0, 3, "TopScreenBG");
-    //networkInit();
-    NF_LoadSpriteGfx("sprite/ball", 0, 32, 32);
-    NF_LoadSpritePal("sprite/ball", 0);
-    NF_VramSpriteGfx(1, 0, 0, false);
-    NF_VramSpritePal(1, 0, 0);
+    // networkInit();
+    // NF_LoadSpriteGfx("sprite/ball", 0, 32, 32);
+    // NF_LoadSpritePal("sprite/ball", 0);
+    // NF_VramSpriteGfx(1, 0, 0, false);
+    // NF_VramSpritePal(1, 0, 0);
     NF_CreateSprite(1, 0, 0, 0, 64, 64);
-    keypad.load(1, 1, 1, 1, 1, 1, Vector2f(80, 32));
+    keypad.load(1, 1, 1, 1, 0, 1, Vector2f(80, 32));
 }
 
 void ControlRoomLevel::handleInput(InputHandler &input) {
     char testbyte = 65;
     if (input.getKeysPressed() & KEY_A) {
-        //send(sock, &testbyte, sizeof(testbyte), NULL);
+        if (sock != -1)
+            send(sock, &testbyte, sizeof(testbyte), NULL);
+    }
+    if (input.getKeysPressed() & KEY_START) {
+        if (sock == -1)
+            networkInit();
     }
 }
 
@@ -43,7 +48,7 @@ void ControlRoomLevel::unload() {
 }
 
 void ControlRoomLevel::networkInit() {
-    struct hostent* myhost = gethostbyname("192.168.162.113");
+    struct hostent* myhost = gethostbyname(keypad.getIP().data());
     sock = socket(AF_INET, SOCK_STREAM, 0);
     sain.sin_family = AF_INET;
     sain.sin_port = htons(8080);

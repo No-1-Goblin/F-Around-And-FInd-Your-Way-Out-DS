@@ -51,8 +51,6 @@ int main(void) {
         }
         oamUpdate(&oamMain);
         oamUpdate(&oamSub);
-        if (inputHandler.getKeysPressed() & KEY_START)
-            break;
     }
 	return 0;
 }

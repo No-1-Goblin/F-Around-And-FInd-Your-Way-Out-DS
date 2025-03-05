@@ -21,7 +21,7 @@ class ControlRoomLevel : public Level {
     protected:
         void networkInit();
         void networkUpdate();
-        int sock;
+        int sock = -1;
         struct sockaddr_in sain;
         IPKeyPad keypad;
 };
