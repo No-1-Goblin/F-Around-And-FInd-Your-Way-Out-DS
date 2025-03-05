@@ -32,6 +32,16 @@ void ControlRoomLevel::postRender() {
 
 }
 
+void ControlRoomLevel::unload() {
+    NF_DeleteTiledBg(0, 3);
+    NF_UnloadTiledBg("TopScreenBG");
+    NF_DeleteSprite(0, 0);
+    NF_UnloadSpritePal(0);
+    NF_UnloadSpriteGfx(0);
+    NF_ResetTiledBgBuffers();
+    NF_ResetSpriteBuffers();
+}
+
 void ControlRoomLevel::networkInit() {
     struct hostent* myhost = gethostbyname("192.168.162.8");
     sock = socket(AF_INET, SOCK_STREAM, 0);
