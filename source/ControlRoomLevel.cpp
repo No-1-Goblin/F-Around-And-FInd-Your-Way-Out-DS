@@ -11,7 +11,7 @@ void ControlRoomLevel::load() {
     NF_VramSpriteGfx(1, 0, 0, false);
     NF_VramSpritePal(1, 0, 0);
     NF_CreateSprite(1, 0, 0, 0, 64, 64);
-    keypad.load(1, 1, 1, 1, 1, 1, Vector2f(32, 32));
+    keypad.load(1, 1, 1, 1, 1, 1, Vector2f(80, 32));
 }
 
 void ControlRoomLevel::handleInput(InputHandler &input) {
