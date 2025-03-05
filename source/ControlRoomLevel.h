@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Level.h"
+#include "IPKeypad.h"
 
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -22,4 +23,5 @@ class ControlRoomLevel : public Level {
         void networkUpdate();
         int sock;
         struct sockaddr_in sain;
+        IPKeyPad keypad;
 };

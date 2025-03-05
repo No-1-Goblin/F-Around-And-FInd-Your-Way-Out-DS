@@ -1,5 +1,8 @@
 #pragma once
 
+#include <nds.h>
+#include <nf_lib.h>
+#include <filesystem.h>
 #include "CollisionBox.h"
 #include <vector>
 
@@ -10,4 +13,5 @@ class IPKeyPad {
     protected:
         Vector2f position;
         std::vector<CollisionBox> collisionBoxes;
+        int sprRamId, plRamId, sprVramId, plVramId, startSprId, screenId;
 };
