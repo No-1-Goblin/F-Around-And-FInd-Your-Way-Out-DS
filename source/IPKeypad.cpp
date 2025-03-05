@@ -14,9 +14,12 @@ void IPKeyPad::load(int spriteRamId, int palRamId, int spriteVramId, int palVram
     NF_CreateSprite(screenId, startSprId, sprVramId, plVramId, position.x + 32, position.y + 64);
     for (int i = 1; i < 10; i++) {
         NF_CreateSprite(screenId, startSprId + i, sprVramId, plVramId, position.x + ((i - 1) % 3) * 32, position.y + ((i - 1) / 3) * 32);
+        NF_SpriteFrame(screenId, startSprId + i, i);
     }
     NF_CreateSprite(screenId, startSprId + 10, sprVramId, plVramId, position.x, position.y + 64);
+    NF_SpriteFrame(screenId, startSprId + 10, 10);
     NF_CreateSprite(screenId, startSprId + 11, sprVramId, plVramId, position.x + 64, position.y + 64);
+    NF_SpriteFrame(screenId, startSprId + 11, 11);
 }
 
 void IPKeyPad::unload() {
