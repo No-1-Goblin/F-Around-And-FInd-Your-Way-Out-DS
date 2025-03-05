@@ -17,6 +17,7 @@
 #include <string.h>
 
 #include <nf_lib.h>
+#include <fat.h>
 
 #include "NFInitialisation.h"
 #include "InputHandler.h"
@@ -33,6 +34,7 @@ int main(void) {
         }
     }
 	initGFX();
+    fatInitDefault();
     InputHandler inputHandler;
     Level* currentLevel = new ControlRoomLevel();
     currentLevel->load();

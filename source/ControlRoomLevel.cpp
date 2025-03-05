@@ -77,9 +77,13 @@ void ControlRoomLevel::postRender() {
 void ControlRoomLevel::unload() {
     NF_DeleteTiledBg(0, 3);
     NF_UnloadTiledBg("TopScreenBG");
-    NF_DeleteSprite(0, 0);
-    NF_UnloadSpritePal(0);
-    NF_UnloadSpriteGfx(0);
+    // NF_DeleteSprite(0, 0);
+    // NF_UnloadSpritePal(0);
+    // NF_UnloadSpriteGfx(0);
+    NF_DeleteTextLayer(0, 0);
+    NF_UnloadTextFont("IP");
+    // Might wanna remove this line
+    NF_InitTiledBgSys(0);
     keypad.unload();
 }
 
