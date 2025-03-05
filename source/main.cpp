@@ -18,15 +18,13 @@
 
 #include <nf_lib.h>
 
-#include "InputHandler.h"
 #include "NFInitialisation.h"
+#include "InputHandler.h"
+#include "Level.h"
 #include "ControlRoomLevel.h"
-	
-//---------------------------------------------------------------------------------
-int main(void) {
-//---------------------------------------------------------------------------------
 
-	if(!Wifi_InitDefault(WFC_CONNECT)) {
+int main(void) {
+    if(!Wifi_InitDefault(WFC_CONNECT)) {
         consoleDemoInit();
         iprintf("Failed to connect!");
         for (int i = 0; i < 64; i++) {
@@ -34,10 +32,10 @@ int main(void) {
             return 0;
         }
     }
+	initGFX();
     InputHandler inputHandler;
     Level* currentLevel = new ControlRoomLevel();
     currentLevel->load();
-    initGFX();
     while (1) {
         inputHandler.updateKeys();
         if (currentLevel) {
@@ -56,4 +54,5 @@ int main(void) {
         if (inputHandler.getKeysPressed() & KEY_START)
             break;
     }
+	return 0;
 }

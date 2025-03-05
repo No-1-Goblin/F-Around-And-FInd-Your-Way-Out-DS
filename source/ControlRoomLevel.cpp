@@ -5,7 +5,7 @@ void ControlRoomLevel::load() {
     levelSize.y = 256;
     NF_LoadTiledBg("bg/TopScreenBG", "TopScreenBG", levelSize.x, levelSize.y);
     NF_CreateTiledBg(0, 3, "TopScreenBG");
-    networkInit();
+    //networkInit();
     NF_LoadSpriteGfx("sprite/ball", 0, 32, 32);
     NF_LoadSpritePal("sprite/ball", 0);
     NF_VramSpriteGfx(1, 0, 0, false);
@@ -16,7 +16,7 @@ void ControlRoomLevel::load() {
 void ControlRoomLevel::handleInput(InputHandler &input) {
     char testbyte = 65;
     if (input.getKeysPressed() & KEY_A) {
-        send(sock, &testbyte, sizeof(testbyte), NULL);
+        //send(sock, &testbyte, sizeof(testbyte), NULL);
     }
 }
 
