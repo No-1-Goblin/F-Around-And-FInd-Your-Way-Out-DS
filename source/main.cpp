@@ -23,8 +23,6 @@
 #include "Level.h"
 #include "ControlRoomLevel.h"
 
-void getHttp(char* url);
-
 int main(void) {
     if(!Wifi_InitDefault(WFC_CONNECT)) {
         consoleDemoInit();
