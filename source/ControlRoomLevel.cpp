@@ -15,6 +15,7 @@ void ControlRoomLevel::load() {
 }
 
 void ControlRoomLevel::handleInput(InputHandler &input) {
+    keypad.handleInput(input);
     char testbyte = 65;
     if (input.getKeysPressed() & KEY_A) {
         if (sock != -1)
@@ -48,7 +49,7 @@ void ControlRoomLevel::unload() {
 }
 
 void ControlRoomLevel::networkInit() {
-    struct hostent* myhost = gethostbyname("86.11.120.209");
+    struct hostent* myhost = gethostbyname(keypad.getIP().data());
     sock = socket(AF_INET, SOCK_STREAM, 0);
     sain.sin_family = AF_INET;
     sain.sin_port = htons(25565);
