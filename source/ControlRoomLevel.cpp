@@ -4,7 +4,7 @@ void ControlRoomLevel::load() {
     levelSize.x = 256;
     levelSize.y = 256;
     NF_LoadTiledBg("bg/TopScreenBG", "TopScreenBG", levelSize.x, levelSize.y);
-    NF_CreateTiledBg(0, 3, "TopScreenBG");
+    //NF_CreateTiledBg(0, 3, "TopScreenBG");
     // networkInit();
     // NF_LoadSpriteGfx("sprite/ball", 0, 32, 32);
     // NF_LoadSpritePal("sprite/ball", 0);
@@ -40,7 +40,7 @@ void ControlRoomLevel::update() {
 }
 
 void ControlRoomLevel::render() {
-    char buffer[19] = {' '};
+    char buffer[19] = {'A'};
     std::string text = "IP: ";
     text += keypad.getIP();
     for (int i = 0; i < text.length(); i++) {
