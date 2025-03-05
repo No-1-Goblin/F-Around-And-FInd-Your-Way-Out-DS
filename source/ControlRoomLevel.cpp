@@ -69,7 +69,7 @@ void ControlRoomLevel::render() {
     for (int i = 0; i < text.length(); i++) {
         buffer[i] = text[i];
     }
-    NF_WriteText(0, 0, 0, 12, buffer);
+    NF_WriteText(0, 0, 0, 12, text.data());
     NF_UpdateTextLayers();  
     
 }
