@@ -6,6 +6,7 @@ void IPKeyPad::load(int spriteRamId, int palRamId, int spriteVramId, int palVram
     sprVramId = spriteRamId;
     plVramId = palVramId;
     startSprId = startSpriteId;
+    screenId = screen;
     position = pos;
     NF_LoadSpriteGfx("sprite/keypad", sprRamId, 32, 32);
     NF_LoadSpritePal("sprite/keypad", plRamId);
