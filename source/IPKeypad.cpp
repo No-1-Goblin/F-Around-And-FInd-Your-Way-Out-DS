@@ -43,6 +43,7 @@ void IPKeyPad::handleInput(InputHandler &input) {
                             for (int i = 0; i < ip.length() - 1; i++) {
                                 temp += ip[i];
                             }
+                            ip.erase();
                             ip = temp;
                         }
                     } else if (i == 11) {

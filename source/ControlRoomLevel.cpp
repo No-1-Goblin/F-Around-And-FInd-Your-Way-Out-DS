@@ -60,14 +60,10 @@ void ControlRoomLevel::update() {
 }
 
 void ControlRoomLevel::render() {
-    char buffer[20];
-    for (int i = 0; i < 20; i++) {
-        buffer[i] = ' ';
-    }
     std::string text = "IP: ";
     text += keypad.getIP();
-    for (int i = 0; i < text.length(); i++) {
-        buffer[i] = text[i];
+    while (text.length() < 20) {
+        text += " ";
     }
     NF_WriteText(0, 0, 0, 12, text.data());
     NF_UpdateTextLayers();  
