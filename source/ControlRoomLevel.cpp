@@ -29,6 +29,26 @@ void ControlRoomLevel::handleInput(InputHandler &input) {
         if (sock != -1)
             send(sock, &testbyte, sizeof(testbyte), NULL);
     }
+    if (input.getKeysPressed() & KEY_UP) {
+        testbyte = 0;
+        if (sock != -1)
+            send(sock, &testbyte, sizeof(testbyte), NULL);
+    }
+    if (input.getKeysPressed() & KEY_DOWN) {
+        testbyte = 1;
+        if (sock != -1)
+            send(sock, &testbyte, sizeof(testbyte), NULL);
+    }
+    if (input.getKeysPressed() & KEY_LEFT) {
+        testbyte = 2;
+        if (sock != -1)
+            send(sock, &testbyte, sizeof(testbyte), NULL);
+    }
+    if (input.getKeysPressed() & KEY_RIGHT) {
+        testbyte = 3;
+        if (sock != -1)
+            send(sock, &testbyte, sizeof(testbyte), NULL);
+    }
     if (input.getKeysPressed() & KEY_START) {
         if (sock == -1)
             networkInit();
