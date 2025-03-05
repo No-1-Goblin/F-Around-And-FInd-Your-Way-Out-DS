@@ -1,9 +1,9 @@
 #include "ControlRoomLevel.h"
 
 void ControlRoomLevel::load() {
-    levelSize.x = 256;
+    levelSize.x = 512;
     levelSize.y = 256;
-    NF_LoadTiledBg("bg/TopScreenBG", "TopScreenBG", levelSize.x, levelSize.y);
+    NF_LoadTiledBg("bg/TestMap", "TopScreenBG", levelSize.x, levelSize.y);
     NF_CreateTiledBg(0, 3, "TopScreenBG");
     //networkInit();
     NF_LoadSpriteGfx("sprite/ball", 0, 32, 32);
