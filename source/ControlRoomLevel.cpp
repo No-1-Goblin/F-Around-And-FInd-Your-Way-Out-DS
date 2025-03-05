@@ -71,6 +71,7 @@ void ControlRoomLevel::render() {
     }
     NF_WriteText(0, 0, 0, 12, buffer);
     NF_UpdateTextLayers();  
+    
 }
 
 void ControlRoomLevel::postRender() {
