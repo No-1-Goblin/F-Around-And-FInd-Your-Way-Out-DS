@@ -11,6 +11,14 @@ void ControlRoomLevel::load() {
     // NF_VramSpriteGfx(1, 0, 0, false);
     // NF_VramSpritePal(1, 0, 0);
     //NF_CreateSprite(1, 0, 0, 0, 64, 64);
+    // Initialize text system
+    NF_InitTextSys(1);
+
+    // Load font file
+    NF_LoadTextFont("fnt/default", "IP", 256, 256, 0);
+
+    // Create text layer
+    NF_CreateTextLayer(1, 0, 0, "IP");
     keypad.load(1, 1, 1, 1, 0, 1, Vector2f(80, 32));
 }
 
@@ -32,7 +40,14 @@ void ControlRoomLevel::update() {
 }
 
 void ControlRoomLevel::render() {
-
+    char buffer[19] = {' '};
+    std::string text = "IP: ";
+    text += keypad.getIP();
+    for (int i = 0; i < text.length(); i++) {
+        buffer[i] = text[i];
+    }
+    NF_WriteText(1, 0, 14, 12, buffer);
+    NF_UpdateTextLayers();  
 }
 
 void ControlRoomLevel::postRender() {
