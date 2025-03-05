@@ -38,12 +38,10 @@ void ControlRoomLevel::unload() {
     NF_DeleteSprite(0, 0);
     NF_UnloadSpritePal(0);
     NF_UnloadSpriteGfx(0);
-    NF_ResetTiledBgBuffers();
-    NF_ResetSpriteBuffers();
 }
 
 void ControlRoomLevel::networkInit() {
-    struct hostent* myhost = gethostbyname("192.168.162.8");
+    struct hostent* myhost = gethostbyname("192.168.162.113");
     sock = socket(AF_INET, SOCK_STREAM, 0);
     sain.sin_family = AF_INET;
     sain.sin_port = htons(8080);
