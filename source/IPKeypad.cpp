@@ -39,7 +39,11 @@ void IPKeyPad::handleInput(InputHandler &input) {
                         ip.append(std::to_string(i));
                     } else if (i == 10) {
                         if (ip.length() > 0) {
-                            ip.pop_back();
+                            std::string temp;
+                            for (int i = 0; i < ip.length() - 1; i++) {
+                                temp += ip[i];
+                            }
+                            ip = temp;
                         }
                     } else if (i == 11) {
                         ip.append(".");

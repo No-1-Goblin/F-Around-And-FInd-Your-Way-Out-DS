@@ -40,13 +40,16 @@ void ControlRoomLevel::update() {
 }
 
 void ControlRoomLevel::render() {
-    char buffer[19] = {'A'};
+    char buffer[20];
+    for (int i = 0; i < 20; i++) {
+        buffer[i] = ' ';
+    }
     std::string text = "IP: ";
     text += keypad.getIP();
     for (int i = 0; i < text.length(); i++) {
         buffer[i] = text[i];
     }
-    NF_WriteText(0, 0, 14, 12, buffer);
+    NF_WriteText(0, 0, 0, 12, buffer);
     NF_UpdateTextLayers();  
 }
 
