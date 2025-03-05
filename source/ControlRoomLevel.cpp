@@ -12,13 +12,13 @@ void ControlRoomLevel::load() {
     // NF_VramSpritePal(1, 0, 0);
     //NF_CreateSprite(1, 0, 0, 0, 64, 64);
     // Initialize text system
-    NF_InitTextSys(1);
+    NF_InitTextSys(0);
 
     // Load font file
     NF_LoadTextFont("fnt/default", "IP", 256, 256, 0);
 
     // Create text layer
-    NF_CreateTextLayer(1, 0, 0, "IP");
+    NF_CreateTextLayer(0, 0, 0, "IP");
     keypad.load(1, 1, 1, 1, 0, 1, Vector2f(80, 32));
 }
 
@@ -46,7 +46,7 @@ void ControlRoomLevel::render() {
     for (int i = 0; i < text.length(); i++) {
         buffer[i] = text[i];
     }
-    NF_WriteText(1, 0, 14, 12, buffer);
+    NF_WriteText(0, 0, 14, 12, buffer);
     NF_UpdateTextLayers();  
 }
 
