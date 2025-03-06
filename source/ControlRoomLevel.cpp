@@ -57,10 +57,10 @@ void ControlRoomLevel::handleInput(InputHandler &input) {
         if (sock != -1)
             send(sock, &testbyte, sizeof(testbyte), NULL);
     }
-    if (input.getKeysPressed() & KEY_START) {
-        if (sock == -1)
-            networkInit();
-    }
+    // if (input.getKeysPressed() & KEY_START) {
+    //     if (sock == -1)
+    //         networkInit();
+    // }
 }
 
 void ControlRoomLevel::update() {

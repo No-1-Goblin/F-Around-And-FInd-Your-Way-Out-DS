@@ -11,4 +11,5 @@ void LevelHandler::handleLevelSwaps() {
     currentLevel = levelToLoad;
     levelToLoad = nullptr;
     currentLevel->load();
+    swapLevel = false;
 }
