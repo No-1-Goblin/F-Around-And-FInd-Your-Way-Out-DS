@@ -12,7 +12,6 @@ class IPKeyPad {
     public:
         void load(int spriteRamId, int palRamId, int spriteVramId, int palVramId, int startSpriteId, int screen, Vector2f pos);
         void handleInput(InputHandler& input);
-        void render();
         void unload();
         std::string getIP() {return ip;};
     protected:

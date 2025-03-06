@@ -55,10 +55,6 @@ void IPKeyPad::handleInput(InputHandler &input) {
     }
 }
 
-void IPKeyPad::render() {
-
-}
-
 void IPKeyPad::unload() {
     for (int i = startSprId; i < startSprId + collisionBoxes.size(); i++) {
         NF_DeleteSprite(screenId, i);

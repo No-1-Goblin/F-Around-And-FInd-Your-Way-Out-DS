@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Level.h"
-#include "IPKeypad.h"
+#include "ButtonGrid.h"
 
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -21,5 +21,5 @@ class ControlRoomLevel : public Level {
         void render() override;
         void postRender() override;
     protected:
-    
+        ButtonGrid buttonGrid;
 };

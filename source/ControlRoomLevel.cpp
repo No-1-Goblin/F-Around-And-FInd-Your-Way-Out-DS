@@ -13,6 +13,7 @@ void ControlRoomLevel::load() {
     levelSize.y = 256;
     NF_LoadTiledBg("bg/TopScreenBG", "TopScreenBG", levelSize.x, levelSize.y);
     NF_CreateTiledBg(0, 3, "TopScreenBG");
+    buttonGrid.load(0, 0, 0, 0, 0, 1, Vector2f(48, 32), Vector2i(5, 4), sock);
 }
 
 void ControlRoomLevel::handleInput(InputHandler &input) {
@@ -37,6 +38,7 @@ void ControlRoomLevel::handleInput(InputHandler &input) {
         if (sock != -1)
             send(sock, &testbyte, sizeof(testbyte), NULL);
     }
+    buttonGrid.handleInput(input);
 }
 
 void ControlRoomLevel::update() {
@@ -54,4 +56,5 @@ void ControlRoomLevel::postRender() {
 void ControlRoomLevel::unload() {
     NF_DeleteTiledBg(0, 3);
     NF_UnloadTiledBg("TopScreenBG");
+    buttonGrid.unload();
 }
