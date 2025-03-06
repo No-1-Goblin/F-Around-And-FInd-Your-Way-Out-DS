@@ -24,6 +24,7 @@
 #include "Level.h"
 #include "LevelHandler.h"
 #include "IPSelectLevel.h"
+#include "ControlRoomLevel.h"
 
 int main(void) {
     if(!Wifi_InitDefault(WFC_CONNECT)) {
@@ -35,10 +36,9 @@ int main(void) {
         }
     }
 	initGFX();
-    fatInitDefault();
     InputHandler inputHandler;
     LevelHandler levelHandler;
-    levelHandler.setCurrentLevel(new IPSelectLevel(&levelHandler));
+    levelHandler.setCurrentLevel(new ControlRoomLevel(&levelHandler));
     levelHandler.getCurrentLevel()->load();
     while (1) {
         inputHandler.updateKeys();

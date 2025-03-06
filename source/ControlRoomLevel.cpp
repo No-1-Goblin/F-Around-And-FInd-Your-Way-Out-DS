@@ -20,13 +20,13 @@ void ControlRoomLevel::load() {
     // NF_VramSpritePal(1, 0, 0);
     //NF_CreateSprite(1, 0, 0, 0, 64, 64);
     // Initialize text system
-    //NF_InitTextSys(0);
+    NF_InitTextSys(0);
 
     // Load font file
-    //NF_LoadTextFont("fnt/default", "IP", 256, 256, 0);
+    NF_LoadTextFont("fnt/default", "IP", 256, 256, 0);
 
     // Create text layer
-    //NF_CreateTextLayer(0, 0, 0, "IP");
+    NF_CreateTextLayer(0, 0, 0, "IP");
     keypad.load(1, 1, 1, 1, 0, 1, Vector2f(80, 32));
 }
 
@@ -73,8 +73,8 @@ void ControlRoomLevel::render() {
     while (text.length() < 20) {
         text += " ";
     }
-    //NF_WriteText(0, 0, 0, 12, text.data());
-    //NF_UpdateTextLayers();  
+    NF_WriteText(0, 0, 0, 12, text.data());
+    NF_UpdateTextLayers();  
 
 }
 
@@ -88,10 +88,10 @@ void ControlRoomLevel::unload() {
     // NF_DeleteSprite(0, 0);
     // NF_UnloadSpritePal(0);
     // NF_UnloadSpriteGfx(0);
-    //NF_DeleteTextLayer(0, 0);
-    //NF_UnloadTextFont("IP");
+    NF_DeleteTextLayer(0, 0);
+    NF_UnloadTextFont("IP");
     // Might wanna remove this line
-    //NF_InitTiledBgSys(0);
+    NF_InitTiledBgSys(0);
     keypad.unload();
 }
 
