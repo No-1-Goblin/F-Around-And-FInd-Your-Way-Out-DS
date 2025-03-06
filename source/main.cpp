@@ -22,7 +22,8 @@
 #include "NFInitialisation.h"
 #include "InputHandler.h"
 #include "Level.h"
-#include "ControlRoomLevel.h"
+#include "LevelHandler.h"
+#include "IPSelectLevel.h"
 
 int main(void) {
     if(!Wifi_InitDefault(WFC_CONNECT)) {
@@ -36,23 +37,25 @@ int main(void) {
 	initGFX();
     fatInitDefault();
     InputHandler inputHandler;
-    Level* currentLevel = new ControlRoomLevel();
-    currentLevel->load();
+    LevelHandler levelHandler;
+    levelHandler.setCurrentLevel(new IPSelectLevel(&levelHandler));
+    levelHandler.getCurrentLevel()->load();
     while (1) {
         inputHandler.updateKeys();
-        if (currentLevel) {
-            currentLevel->handleInput(inputHandler);
-            currentLevel->update();
-            currentLevel->render();
+        if (levelHandler.getCurrentLevel()) {
+            levelHandler.getCurrentLevel()->handleInput(inputHandler);
+            levelHandler.getCurrentLevel()->update();
+            levelHandler.getCurrentLevel()->render();
         }
         NF_SpriteOamSet(0);
         NF_SpriteOamSet(1);
         swiWaitForVBlank();
-        if (currentLevel) {
-            currentLevel->postRender();
+        if (levelHandler.getCurrentLevel()) {
+            levelHandler.getCurrentLevel()->postRender();
         }
         oamUpdate(&oamMain);
         oamUpdate(&oamSub);
+        levelHandler.handleLevelSwaps();
     }
 	return 0;
 }

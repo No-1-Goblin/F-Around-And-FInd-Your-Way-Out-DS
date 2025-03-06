@@ -1,5 +1,13 @@
 #include "Level.h"
 
+Level::Level(LevelHandler* lvlHandler) {
+    levelHandler = lvlHandler;
+}
+
+Level::~Level() {
+
+}
+
 void Level::load() {
     
 }

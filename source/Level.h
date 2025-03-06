@@ -4,9 +4,12 @@
 #include <filesystem.h>
 #include "InputHandler.h"
 #include "Vector2i.h"
+#include "LevelHandler.h"
 
 class Level {
     public:
+        Level(LevelHandler* levelHandler);
+        ~Level();
         virtual void load();
         virtual void handleInput(InputHandler &input);
         virtual void update();
@@ -18,4 +21,5 @@ class Level {
         Vector2i levelSize;
         struct sockaddr_in sain;
         int sock = -1;
+        LevelHandler* levelHandler;
 };

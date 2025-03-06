@@ -10,10 +10,10 @@
 #include <stdio.h>
 #include <string.h>
 
-class ControlRoomLevel : public Level {
+class IPSelectLevel : public Level {
     public:
-        ControlRoomLevel(LevelHandler* levelHandler);
-        ~ControlRoomLevel();
+        IPSelectLevel(LevelHandler* levelHandler);
+        ~IPSelectLevel();
         void load() override;
         void unload() override;
         void handleInput(InputHandler &input) override;
@@ -25,4 +25,4 @@ class ControlRoomLevel : public Level {
         void networkUpdate();
         void saveIP();
         IPKeyPad keypad;
-};
+}
