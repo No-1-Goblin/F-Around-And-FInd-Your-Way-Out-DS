@@ -60,6 +60,7 @@ void IPSelectLevel::unload() {
     NF_UnloadTextFont("IP");
     keypad.unload();
     // Might wanna remove this line
+    NF_ResetSpriteBuffers();
     NF_InitTiledBgSys(0);
 }
 
