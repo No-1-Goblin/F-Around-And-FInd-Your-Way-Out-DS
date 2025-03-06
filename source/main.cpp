@@ -38,7 +38,7 @@ int main(void) {
 	initGFX();
     InputHandler inputHandler;
     LevelHandler levelHandler;
-    levelHandler.setCurrentLevel(new ControlRoomLevel(&levelHandler));
+    levelHandler.setCurrentLevel(new IPSelectLevel(&levelHandler));
     levelHandler.getCurrentLevel()->load();
     while (1) {
         inputHandler.updateKeys();
