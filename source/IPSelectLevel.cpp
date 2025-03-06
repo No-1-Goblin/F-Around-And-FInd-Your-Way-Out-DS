@@ -1,7 +1,7 @@
 #include "IPSelectLevel.h"
 #include "ControlRoomLevel.h"
 
-IPSelectLevel::IPSelectLevel(LevelHandler* lvlHandler) {
+IPSelectLevel::IPSelectLevel(LevelHandler* lvlHandler) : Level(lvlHandler) {
 
 }
 
@@ -30,7 +30,7 @@ void IPSelectLevel::handleInput(InputHandler& input) {
         if (sock == -1) {
             //networkInit();
             Level* controlRoomLevel = new ControlRoomLevel(levelHandler);
-            controlRoomLevel->passNetworkInfo(sain, sock);
+            controlRoomLevel->passNetworkInfo(sock);
             levelHandler->loadLevel(controlRoomLevel);
         }
     }
@@ -66,6 +66,7 @@ void IPSelectLevel::unload() {
 void IPSelectLevel::networkInit() {
     struct hostent* myhost = gethostbyname(keypad.getIP().data());
     sock = socket(AF_INET, SOCK_STREAM, 0);
+    struct sockaddr_in sain;
     sain.sin_family = AF_INET;
     sain.sin_port = htons(8080);
     sain.sin_addr.s_addr = *((unsigned long*)(myhost->h_addr_list[0]));

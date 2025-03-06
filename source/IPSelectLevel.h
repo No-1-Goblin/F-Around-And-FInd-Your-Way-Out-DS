@@ -25,4 +25,4 @@ class IPSelectLevel : public Level {
         void networkUpdate();
         void saveIP();
         IPKeyPad keypad;
-}
+};

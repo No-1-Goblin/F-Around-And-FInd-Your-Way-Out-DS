@@ -16,10 +16,9 @@ class Level {
         virtual void render();
         virtual void postRender();
         virtual void unload();
-        void passNetworkInfo(sockaddr_in sockaddr, int socket) {sain = sockaddr; sock = socket;};
+        void passNetworkInfo(int socket) {sock = socket;};
     protected:
         Vector2i levelSize;
-        struct sockaddr_in sain;
         int sock = -1;
         LevelHandler* levelHandler;
 };

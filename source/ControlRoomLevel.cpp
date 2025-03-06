@@ -1,6 +1,6 @@
 #include "ControlRoomLevel.h"
 
-ControlRoomLevel::ControlRoomLevel(LevelHandler* lvlHandler) {
+ControlRoomLevel::ControlRoomLevel(LevelHandler* lvlHandler) : Level(lvlHandler) {
 
 }
 
@@ -98,6 +98,7 @@ void ControlRoomLevel::unload() {
 void ControlRoomLevel::networkInit() {
     struct hostent* myhost = gethostbyname(keypad.getIP().data());
     sock = socket(AF_INET, SOCK_STREAM, 0);
+    struct sockaddr_in sain;
     sain.sin_family = AF_INET;
     sain.sin_port = htons(8080);
     sain.sin_addr.s_addr = *((unsigned long*)(myhost->h_addr_list[0]));
