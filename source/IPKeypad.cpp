@@ -66,4 +66,5 @@ void IPKeyPad::unload() {
     collisionBoxes.clear();
     NF_UnloadSpriteGfx(sprRamId);
     NF_UnloadSpritePal(plRamId);
+    NF_FreeSpriteGfx(screenId, sprVramId);
 }
