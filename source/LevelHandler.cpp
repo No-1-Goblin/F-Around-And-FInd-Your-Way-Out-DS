@@ -2,9 +2,9 @@
 #include "Level.h"
 
 void LevelHandler::handleLevelSwaps() {
-    if (!levelToLoad)
+    if (!swapLevel)
         return;
-    if (currentLevel) {
+    if (currentLevel != nullptr) {
         currentLevel->unload();
         delete currentLevel;
     }

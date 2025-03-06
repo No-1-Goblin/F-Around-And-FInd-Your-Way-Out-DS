@@ -12,7 +12,7 @@ void ControlRoomLevel::load() {
     levelSize.x = 256;
     levelSize.y = 256;
     NF_LoadTiledBg("bg/TopScreenBG", "TopScreenBG", levelSize.x, levelSize.y);
-    //NF_CreateTiledBg(0, 3, "TopScreenBG");
+    NF_CreateTiledBg(0, 3, "TopScreenBG");
     // networkInit();
     // NF_LoadSpriteGfx("sprite/ball", 0, 32, 32);
     // NF_LoadSpritePal("sprite/ball", 0);
