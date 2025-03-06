@@ -32,6 +32,8 @@ void ButtonGrid::handleInput(InputHandler& input) {
             if (collisionCircles[i].checkCollision(pos)) {
                 buttonStates[i] = !buttonStates[i];
                 NF_SpriteFrame(screenId, startSprId + i, buttonStates[i] ? 1 : 0);
+                char sendByte = i;
+                send(sock, &sendByte, sizeof(sendByte), NULL);
             }
         }
     }

@@ -8,6 +8,10 @@
 #include "Vector2i.h"
 #include <vector>
 #include <string>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
+
 
 class ButtonGrid {
     public:
