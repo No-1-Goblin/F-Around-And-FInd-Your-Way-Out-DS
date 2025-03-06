@@ -21,8 +21,5 @@ class ControlRoomLevel : public Level {
         void render() override;
         void postRender() override;
     protected:
-        void networkInit();
-        void networkUpdate();
-        void saveIP();
-        IPKeyPad keypad;
+    
 };
