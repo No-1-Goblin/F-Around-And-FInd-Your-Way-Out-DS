@@ -16,7 +16,7 @@ void ButtonGrid::load(int spriteRamId, int palRamId, int spriteVramId, int palVr
     NF_VramSpritePal(screenId, plRamId, plVramId);
     for (int i = 0; i < size.y; i++) {
         for (int j = 0; j < size.x; j++) {
-            NF_CreateSprite(screen, startSprId + i * 3 + j, sprVramId, plVramId, position.x + j * 32, position.y + i * 32);
+            NF_CreateSprite(screen, startSprId + i * size.y + j, sprVramId, plVramId, position.x + j * 32, position.y + i * 32);
             collisionCircles.push_back(CollisionCircle(Vector2f(position.x + j * 32 + 16, position.y + i * 32 + 16), 14));
             buttonStates.push_back(false);
         }
