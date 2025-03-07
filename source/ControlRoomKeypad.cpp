@@ -52,7 +52,7 @@ void ControlRoomKeypad::handleInput(InputHandler &input) {
                         }
                         code.erase();
                         code = temp;
-                    } else if (i == 11) {
+                    } else if (i == 11 && code.length() == 4) {
                         code.erase();
                         code = "";
                     }
@@ -67,7 +67,7 @@ void ControlRoomKeypad::handleInput(InputHandler &input) {
 }
 
 void ControlRoomKeypad::unload() {
-    for (int i = startSprId; i < startSprId + collisionBoxes.size() + 2; i++) {
+    for (int i = startSprId; i < startSprId + collisionBoxes.size(); i++) {
         NF_DeleteSprite(screenId, i);
     }
     collisionBoxes.clear();

@@ -15,6 +15,7 @@ void ControlRoomLevel::load() {
     NF_CreateTiledBg(0, 3, "TopScreenBG");
     buttonGrid.load(0, 0, 0, 0, 0, 0, 1, Vector2f(0, 32), Vector2i(5, 4), sock);
     keypad.load(1, 1, 1, 1, 20, 1, 1, Vector2f(160, 32), sock);
+    codeDisplay.load(2, 2, 2, 2, 32, 1, Vector2f(160, 8));
 }
 
 void ControlRoomLevel::handleInput(InputHandler &input) {
@@ -53,7 +54,7 @@ void ControlRoomLevel::update() {
 }
 
 void ControlRoomLevel::render() {
-    
+    codeDisplay.render(keypad.getCode());
 }
 
 void ControlRoomLevel::postRender() {
@@ -65,4 +66,5 @@ void ControlRoomLevel::unload() {
     NF_UnloadTiledBg("TopScreenBG");
     buttonGrid.unload();
     keypad.unload();
+    codeDisplay.unload();
 }
