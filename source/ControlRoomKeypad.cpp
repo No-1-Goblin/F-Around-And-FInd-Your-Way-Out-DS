@@ -59,7 +59,7 @@ void ControlRoomKeypad::handleInput(InputHandler &input) {
                     code = tmp;
                 }
                 char sendByte = i + 100;
-                //send(sock, &sendByte, sizeof(sendByte), NULL);
+                send(sock, &sendByte, sizeof(sendByte), NULL);
                 int keypadSound = rand() % 7;
                 NF_PlayRawSound(startSndId + keypadSound, 127, 64, false, 0);
             }

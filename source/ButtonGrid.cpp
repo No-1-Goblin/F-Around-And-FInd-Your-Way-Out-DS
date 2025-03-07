@@ -35,7 +35,7 @@ void ButtonGrid::handleInput(InputHandler& input) {
                 buttonStates[i] = !buttonStates[i];
                 NF_SpriteFrame(screenId, startSprId + i, buttonStates[i] ? 1 : 0);
                 char sendByte = i;
-                //send(sock, &sendByte, sizeof(sendByte), NULL);
+                send(sock, &sendByte, sizeof(sendByte), NULL);
                 NF_PlayRawSound(startSndId, 127, 64, false, 0);
             }
         }
