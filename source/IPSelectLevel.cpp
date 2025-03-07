@@ -20,7 +20,7 @@ void IPSelectLevel::load() {
 
     // Create text layer
     NF_CreateTextLayer(0, 0, 0, "IP");
-    keypad.load(1, 1, 1, 1, 0, 1, Vector2f(80, 32));
+    keypad.load(1, 1, 1, 1, 0, 0, 1, Vector2f(80, 32));
 }
 
 void IPSelectLevel::handleInput(InputHandler& input) {
