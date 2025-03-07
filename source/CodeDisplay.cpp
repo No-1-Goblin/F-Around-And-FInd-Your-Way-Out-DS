@@ -8,19 +8,19 @@ void CodeDisplay::load(int spriteRamId, int palRamId, int spriteVramId, int palV
     startSprId = startSpriteId;
     screenId = screen;
     position = pos;
-    NF_LoadSpriteGfx("sprite/numbers", sprRamId, 24, 24);
+    NF_LoadSpriteGfx("sprite/numbers", sprRamId, 32, 32);
     NF_LoadSpritePal("sprite/numbers", plRamId);
     NF_VramSpriteGfx(screenId, sprRamId, sprVramId, false);
     NF_VramSpritePal(screenId, plRamId, plVramId);
     for (int i = 0; i < 4; i++) {
         NF_CreateSprite(screenId, startSprId + i, sprVramId, plVramId, position.x + i * 24, position.y);
-        NF_SpriteFrame(screenId, startSprId + i, 13);
+        NF_SpriteFrame(screenId, startSprId + i, 12);
     }
 }
 
 void CodeDisplay::render(std::string code) {
     for (int i = 0; i < 4; i++) {
-        NF_SpriteFrame(screenId, startSprId + i, 13);
+        NF_SpriteFrame(screenId, startSprId + i, 12);
     }
     if (code.length() <= 4 && code.length() > 0) {
         for (int i = 0; i < code.length(); i++) {
