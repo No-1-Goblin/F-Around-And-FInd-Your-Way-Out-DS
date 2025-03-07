@@ -55,6 +55,8 @@ int main(void) {
         }
         oamUpdate(&oamMain);
         oamUpdate(&oamSub);
+        if (inputHandler.getKeysPressed() & KEY_START && inputHandler.getKeysPressed() & KEY_SELECT)
+            return 0;
         levelHandler.handleLevelSwaps();
     }
 	return 0;

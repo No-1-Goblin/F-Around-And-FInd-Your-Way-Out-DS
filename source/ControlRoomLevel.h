@@ -2,6 +2,7 @@
 
 #include "Level.h"
 #include "ButtonGrid.h"
+#include "ControlRoomKeypad.h"
 
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -22,4 +23,5 @@ class ControlRoomLevel : public Level {
         void postRender() override;
     protected:
         ButtonGrid buttonGrid;
+        ControlRoomKeypad keypad;
 };
