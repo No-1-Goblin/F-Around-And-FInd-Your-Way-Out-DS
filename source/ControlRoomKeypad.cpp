@@ -42,7 +42,7 @@ void ControlRoomKeypad::handleInput(InputHandler &input) {
         Vector2f pos = Vector2f(touch.px, touch.py);
         for (int i = 0; i < collisionBoxes.size(); i++) {
             if (collisionBoxes[i].checkCollision(pos)) {
-                if (i < 10) {
+                if (i < 10 && code.length() < 4) {
                     code += std::to_string(i);
                 } else if ( i == 10) {
                     if (code.length() > 0) {
@@ -54,7 +54,8 @@ void ControlRoomKeypad::handleInput(InputHandler &input) {
                         code = temp;
                     } else if (i == 11 && code.length() == 4) {
                         code.erase();
-                        code = "";
+                        std::string tmp = "";
+                        code = tmp;
                     }
                 }
                 char sendByte = i + 100;
