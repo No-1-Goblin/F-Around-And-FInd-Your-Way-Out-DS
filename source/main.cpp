@@ -36,6 +36,8 @@ int main(void) {
         }
     }
 	initGFX();
+    soundEnable();
+    NF_InitRawSoundBuffers();
     InputHandler inputHandler;
     LevelHandler levelHandler;
     levelHandler.setCurrentLevel(new IPSelectLevel(&levelHandler));

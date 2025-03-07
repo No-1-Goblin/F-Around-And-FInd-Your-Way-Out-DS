@@ -1,11 +1,12 @@
 #include "IPKeypad.h"
 
-void IPKeyPad::load(int spriteRamId, int palRamId, int spriteVramId, int palVramId, int startSpriteId, int screen, Vector2f pos) {
+void IPKeyPad::load(int spriteRamId, int palRamId, int spriteVramId, int palVramId, int startSpriteId, int soundId, int screen, Vector2f pos) {
     sprRamId = spriteRamId;
     plRamId = palRamId;
     sprVramId = spriteRamId;
     plVramId = palVramId;
     startSprId = startSpriteId;
+    sndId = soundId;
     screenId = screen;
     position = pos;
     NF_LoadSpriteGfx("sprite/keypad", sprRamId, 32, 32);
@@ -25,6 +26,7 @@ void IPKeyPad::load(int spriteRamId, int palRamId, int spriteVramId, int palVram
     NF_CreateSprite(screenId, startSprId + 11, sprVramId, plVramId, position.x + 64, position.y + 96);
     NF_SpriteFrame(screenId, startSprId + 11, 11);
     collisionBoxes.push_back(CollisionBox(Vector2f(position.x + 64, position.y + 96), Vector2f(32, 32)));
+    NF_LoadRawSound("sound/KeypadBeep", sndId, 11025, 0);
 }
 
 void IPKeyPad::handleInput(InputHandler &input) {
@@ -50,6 +52,7 @@ void IPKeyPad::handleInput(InputHandler &input) {
                         ip.append(".");
                     }
                 }
+                NF_PlayRawSound(sndId, 127, 64, false, 0);
             }
         }
     }
@@ -63,4 +66,5 @@ void IPKeyPad::unload() {
     NF_UnloadSpriteGfx(sprRamId);
     NF_UnloadSpritePal(plRamId);
     NF_FreeSpriteGfx(screenId, sprVramId);
+    NF_UnloadRawSound(sndId);
 }

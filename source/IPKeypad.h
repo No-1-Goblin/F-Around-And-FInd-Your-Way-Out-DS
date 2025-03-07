@@ -10,13 +10,13 @@
 
 class IPKeyPad {
     public:
-        void load(int spriteRamId, int palRamId, int spriteVramId, int palVramId, int startSpriteId, int screen, Vector2f pos);
+        void load(int spriteRamId, int palRamId, int spriteVramId, int palVramId, int startSpriteId, int soundId, int screen, Vector2f pos);
         void handleInput(InputHandler& input);
         void unload();
         std::string getIP() {return ip;};
     protected:
         Vector2f position;
         std::vector<CollisionBox> collisionBoxes;
-        int sprRamId, plRamId, sprVramId, plVramId, startSprId, screenId;
+        int sprRamId, plRamId, sprVramId, plVramId, startSprId, sndId, screenId;
         std::string ip = "";
 };
