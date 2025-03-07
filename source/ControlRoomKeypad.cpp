@@ -23,13 +23,16 @@ void ControlRoomKeypad::load(int spriteRamId, int palRamId, int spriteVramId, in
         collisionBoxes.push_back(CollisionBox(Vector2f(position.x + ((i - 1) % 3) * 32, position.y + ((i - 1) / 3) * 32), Vector2f(32, 32)));
     }
     NF_CreateSprite(screenId, startSprId + 10, sprVramId, plVramId, position.x, position.y + 96);
-    NF_SpriteFrame(screenId, startSprId + 10, 12);
+    NF_SpriteFrame(screenId, startSprId + 10, 10);
+    collisionBoxes.push_back(CollisionBox(Vector2f(position.x, position.y + 96), Vector2f(32, 32)));
     NF_CreateSprite(screenId, startSprId + 11, sprVramId, plVramId, position.x + 64, position.y + 96);
     NF_SpriteFrame(screenId, startSprId + 11, 13);
+    collisionBoxes.push_back(CollisionBox(Vector2f(position.x + 64, position.y + 96), Vector2f(32, 32)));
     for (int i = 0; i < 7; i++) {
         std::string fileName ="sound/KeypadBeep" + std::to_string(i + 1);
         NF_LoadRawSound(fileName.data(), startSndId + i, 11025, 0);
     }
+    
 }
 
 void ControlRoomKeypad::handleInput(InputHandler &input) {
@@ -39,6 +42,21 @@ void ControlRoomKeypad::handleInput(InputHandler &input) {
         Vector2f pos = Vector2f(touch.px, touch.py);
         for (int i = 0; i < collisionBoxes.size(); i++) {
             if (collisionBoxes[i].checkCollision(pos)) {
+                if (i < 10) {
+                    code += std::to_string(i);
+                } else if ( i == 10) {
+                    if (code.length() > 0) {
+                        std::string temp;
+                        for (int i = 0; i < code.length() - 1; i++) {
+                            temp += code[i];
+                        }
+                        code.erase();
+                        code = temp;
+                    } else if (i == 11) {
+                        code.erase();
+                        code = "";
+                    }
+                }
                 char sendByte = i + 100;
                 //send(sock, &sendByte, sizeof(sendByte), NULL);
                 int keypadSound = rand() % 7;
