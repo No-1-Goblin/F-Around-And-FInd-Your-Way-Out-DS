@@ -13,11 +13,11 @@
 
 class ControlRoomKeypad {
     public:
-    void load(int spriteRamId, int palRamId, int spriteVramId, int palVramId, int startSpriteId, int screen, Vector2f pos, int socket);
+    void load(int spriteRamId, int palRamId, int spriteVramId, int palVramId, int startSpriteId, int startSoundId, int screen, Vector2f pos, int socket);
     void handleInput(InputHandler& input);
     void unload();
     protected:
     Vector2f position;
     std::vector<CollisionBox> collisionBoxes;
-    int sprRamId, plRamId, sprVramId, plVramId, startSprId, screenId, sock;
+    int sprRamId, plRamId, sprVramId, plVramId, startSprId, startSndId, screenId, sock;
 };

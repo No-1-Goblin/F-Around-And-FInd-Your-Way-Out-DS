@@ -13,8 +13,8 @@ void ControlRoomLevel::load() {
     levelSize.y = 256;
     NF_LoadTiledBg("bg/TopScreenBG", "TopScreenBG", levelSize.x, levelSize.y);
     NF_CreateTiledBg(0, 3, "TopScreenBG");
-    buttonGrid.load(0, 0, 0, 0, 0, 1, Vector2f(0, 32), Vector2i(5, 4), sock);
-    keypad.load(1, 1, 1, 1, 20, 1, Vector2f(160, 32), sock);
+    buttonGrid.load(0, 0, 0, 0, 0, 0, 1, Vector2f(0, 32), Vector2i(5, 4), sock);
+    keypad.load(1, 1, 1, 1, 20, 1, 1, Vector2f(160, 32), sock);
 }
 
 void ControlRoomLevel::handleInput(InputHandler &input) {
@@ -39,7 +39,13 @@ void ControlRoomLevel::handleInput(InputHandler &input) {
     //     if (sock != -1)
     //         send(sock, &testbyte, sizeof(testbyte), NULL);
     // }
+    if (input.getKeysPressed() & KEY_SELECT) {
+        Level* controlRoomLevel = new ControlRoomLevel(levelHandler);
+        controlRoomLevel->passNetworkInfo(sock);
+        levelHandler->loadLevel(controlRoomLevel);
+    }
     buttonGrid.handleInput(input);
+    keypad.handleInput(input);
 }
 
 void ControlRoomLevel::update() {
@@ -58,4 +64,5 @@ void ControlRoomLevel::unload() {
     NF_DeleteTiledBg(0, 3);
     NF_UnloadTiledBg("TopScreenBG");
     buttonGrid.unload();
+    keypad.unload();
 }

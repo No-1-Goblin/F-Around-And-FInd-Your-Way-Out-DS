@@ -28,7 +28,7 @@ void IPSelectLevel::handleInput(InputHandler& input) {
     
     if (input.getKeysPressed() & KEY_START) {
         if (sock == -1) {
-            networkInit();
+            //networkInit();
             Level* controlRoomLevel = new ControlRoomLevel(levelHandler);
             controlRoomLevel->passNetworkInfo(sock);
             levelHandler->loadLevel(controlRoomLevel);

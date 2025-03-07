@@ -1,11 +1,12 @@
 #include "ButtonGrid.h"
 
-void ButtonGrid::load(int spriteRamId, int palRamId, int spriteVramId, int palVramId, int startSpriteId, int screen, Vector2f pos, Vector2i gridSize, int socket) {
+void ButtonGrid::load(int spriteRamId, int palRamId, int spriteVramId, int palVramId, int startSpriteId, int startSoundId, int screen, Vector2f pos, Vector2i gridSize, int socket) {
     sprRamId = spriteRamId;
     plRamId = palRamId;
     sprVramId = spriteRamId;
     plVramId = palVramId;
     startSprId = startSpriteId;
+    startSndId = startSoundId;
     screenId = screen;
     position = pos;
     size = gridSize;
@@ -21,6 +22,7 @@ void ButtonGrid::load(int spriteRamId, int palRamId, int spriteVramId, int palVr
             buttonStates.push_back(false);
         }
     }
+    NF_LoadRawSound("sound/ButtonClick", startSndId, 11025, 0);
 }
 
 void ButtonGrid::handleInput(InputHandler& input) {
@@ -33,7 +35,8 @@ void ButtonGrid::handleInput(InputHandler& input) {
                 buttonStates[i] = !buttonStates[i];
                 NF_SpriteFrame(screenId, startSprId + i, buttonStates[i] ? 1 : 0);
                 char sendByte = i;
-                send(sock, &sendByte, sizeof(sendByte), NULL);
+                //send(sock, &sendByte, sizeof(sendByte), NULL);
+                NF_PlayRawSound(startSndId, 127, 64, false, 0);
             }
         }
     }
@@ -48,4 +51,5 @@ void ButtonGrid::unload() {
     NF_UnloadSpriteGfx(sprRamId);
     NF_UnloadSpritePal(plRamId);
     NF_FreeSpriteGfx(screenId, sprVramId);
+    NF_UnloadRawSound(startSndId);
 }
