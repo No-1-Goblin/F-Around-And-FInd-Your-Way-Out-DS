@@ -52,11 +52,11 @@ void ControlRoomKeypad::handleInput(InputHandler &input) {
                         }
                         code.erase();
                         code = temp;
-                    } else if (i == 11 && code.length() == 4) {
-                        code.erase();
-                        std::string tmp = "";
-                        code = tmp;
                     }
+                } else if (i == 11 && code.length() == 4) {
+                    code.erase();
+                    std::string tmp = "";
+                    code = tmp;
                 }
                 char sendByte = i + 100;
                 //send(sock, &sendByte, sizeof(sendByte), NULL);
