@@ -22,6 +22,7 @@ class ControlRoomLevel : public Level {
         void update() override;
         void render() override;
         void postRender() override;
+        void handleNetwork() override;
     protected:
         ButtonGrid buttonGrid;
         ControlRoomKeypad keypad;

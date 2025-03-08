@@ -20,6 +20,7 @@ class IPSelectLevel : public Level {
         void update() override;
         void render() override;
         void postRender() override;
+        void handleNetwork() override;
     protected:
         void networkInit();
         void networkUpdate();

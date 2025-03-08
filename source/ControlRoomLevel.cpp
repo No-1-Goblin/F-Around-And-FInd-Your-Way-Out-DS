@@ -1,4 +1,5 @@
 #include "ControlRoomLevel.h"
+#include "IPSelectLevel.h"
 
 ControlRoomLevel::ControlRoomLevel(LevelHandler* lvlHandler) : Level(lvlHandler) {
 
@@ -59,6 +60,31 @@ void ControlRoomLevel::render() {
 
 void ControlRoomLevel::postRender() {
 
+}
+
+void ControlRoomLevel::handleNetwork() {
+    if (sock != -1) {
+        int i = 1;
+        ioctl(sock, FIONBIO, &i);
+        char receivedData;
+        while (recv(sock, &receivedData, 1, NULL) == 1) {
+            switch (receivedData) {
+                case char(255):
+                    Level* ipSelectLevel = new IPSelectLevel(levelHandler);
+                    levelHandler->loadLevel(ipSelectLevel);
+                    break;
+                case char(254):
+                    Level* controlRoomLevel = new ControlRoomLevel(levelHandler);
+                    controlRoomLevel->passNetworkInfo(sock);
+                    levelHandler->loadLevel(controlRoomLevel);
+                    break;
+                default:
+                    break;
+            }
+        }
+        i = 0;
+        ioctl(sock, FIONBIO, &i);
+    }
 }
 
 void ControlRoomLevel::unload() {

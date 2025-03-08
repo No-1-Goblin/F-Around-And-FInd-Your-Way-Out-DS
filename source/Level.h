@@ -15,6 +15,7 @@ class Level {
         virtual void update();
         virtual void render();
         virtual void postRender();
+        virtual void handleNetwork();
         virtual void unload();
         void passNetworkInfo(int socket) {sock = socket;};
     protected:

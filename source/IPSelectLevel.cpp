@@ -55,6 +55,10 @@ void IPSelectLevel::postRender() {
 
 }
 
+void IPSelectLevel::handleNetwork() {
+
+}
+
 void IPSelectLevel::unload() {
     NF_DeleteTextLayer(0, 0);
     NF_UnloadTextFont("IP");

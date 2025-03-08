@@ -31,3 +31,7 @@ void Level::render() {
 void Level::postRender() {
     
 }
+
+void Level::handleNetwork() {
+    
+}
