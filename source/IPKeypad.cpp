@@ -56,7 +56,7 @@ void IPKeyPad::handleInput(InputHandler &input) {
                     }
                 }
                 int keypadSound = rand() % 7;
-                NF_PlayRawSound(startSndId + keypadSound, 127, 64, false, 0);
+                NF_PlayRawSound(startSndId + keypadSound, 64, 64, false, 0);
             }
         }
     }
