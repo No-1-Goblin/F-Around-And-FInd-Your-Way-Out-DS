@@ -105,5 +105,6 @@ void ControlRoomLevel::unload() {
     buttonGrid.unload();
     keypad.unload();
     codeDisplay.unload();
+    healthDisplay.unload();
     NF_UnloadRawSound(31);
 }
