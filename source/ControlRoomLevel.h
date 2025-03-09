@@ -4,6 +4,7 @@
 #include "ButtonGrid.h"
 #include "ControlRoomKeypad.h"
 #include "CodeDisplay.h"
+#include "HealthDisplay.h"
 
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -27,4 +28,6 @@ class ControlRoomLevel : public Level {
         ButtonGrid buttonGrid;
         ControlRoomKeypad keypad;
         CodeDisplay codeDisplay;
+        HealthDisplay healthDisplay;
+        uint8 health = 100;
 };

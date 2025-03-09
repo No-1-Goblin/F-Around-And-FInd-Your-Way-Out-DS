@@ -17,6 +17,7 @@ void ControlRoomLevel::load() {
     buttonGrid.load(0, 0, 0, 0, 0, 0, 1, Vector2f(0, 32), Vector2i(5, 4), sock);
     keypad.load(1, 1, 1, 1, 20, 1, 1, Vector2f(160, 32), sock);
     codeDisplay.load(2, 2, 2, 2, 32, 1, Vector2f(160, 8));
+    healthDisplay.load(3, 3, 3, 3, 36, 0, Vector2f(128, 160));
     NF_LoadRawSound("sound/Goodbye", 31, 11025, 0);
 }
 
@@ -57,6 +58,7 @@ void ControlRoomLevel::update() {
 
 void ControlRoomLevel::render() {
     codeDisplay.render(keypad.getCode());
+    healthDisplay.render(std::to_string(health));
 }
 
 void ControlRoomLevel::postRender() {
@@ -84,6 +86,11 @@ void ControlRoomLevel::handleNetwork() {
                     controlRoomLevel->passNetworkInfo(sock);
                     levelHandler->loadLevel(controlRoomLevel);
                     break;
+                }
+                default: {
+                    if (receivedData <= 100) {
+                        health = receivedData;
+                    }
                 }
             }
         }
