@@ -1,5 +1,6 @@
 #include "ControlRoomLevel.h"
 #include "IPSelectLevel.h"
+#include "WinScreenLevel.h"
 
 ControlRoomLevel::ControlRoomLevel(LevelHandler* lvlHandler) : Level(lvlHandler) {
 
@@ -43,11 +44,16 @@ void ControlRoomLevel::handleInput(InputHandler &input) {
     //     if (sock != -1)
     //         send(sock, &testbyte, sizeof(testbyte), NULL);
     // }
-    if (input.getKeysPressed() & KEY_SELECT) {
-        Level* controlRoomLevel = new ControlRoomLevel(levelHandler);
-        controlRoomLevel->passNetworkInfo(sock);
-        levelHandler->loadLevel(controlRoomLevel);
-    }
+    // if (input.getKeysPressed() & KEY_SELECT) {
+    //     Level* controlRoomLevel = new ControlRoomLevel(levelHandler);
+    //     controlRoomLevel->passNetworkInfo(sock);
+    //     levelHandler->loadLevel(controlRoomLevel);
+    // }
+    // if (input.getKeysPressed() & KEY_START) {
+    //     Level* winScreenLevel = new WinScreenLevel(levelHandler);
+    //     close(sock);
+    //     levelHandler->loadLevel(winScreenLevel);
+    // }
     buttonGrid.handleInput(input);
     keypad.handleInput(input);
 }
@@ -85,6 +91,12 @@ void ControlRoomLevel::handleNetwork() {
                     Level* controlRoomLevel = new ControlRoomLevel(levelHandler);
                     controlRoomLevel->passNetworkInfo(sock);
                     levelHandler->loadLevel(controlRoomLevel);
+                    break;
+                }
+                case 253: {
+                    Level* winScreenLevel = new WinScreenLevel(levelHandler);
+                    close(sock);
+                    levelHandler->loadLevel(winScreenLevel);
                     break;
                 }
                 default: {
