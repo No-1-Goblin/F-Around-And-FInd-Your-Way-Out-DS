@@ -54,6 +54,7 @@ int main(void) {
         swiWaitForVBlank();
         if (levelHandler.getCurrentLevel()) {
             levelHandler.getCurrentLevel()->postRender();
+            levelHandler.getCurrentLevel()->handleNetwork();
         }
         oamUpdate(&oamMain);
         oamUpdate(&oamSub);
