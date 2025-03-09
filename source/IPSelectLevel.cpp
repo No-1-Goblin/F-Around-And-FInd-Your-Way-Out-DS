@@ -21,8 +21,6 @@ void IPSelectLevel::load() {
     // Create text layer
     NF_CreateTextLayer(0, 0, 0, "IP");
     keypad.load(0, 0, 0, 0, 0, 0, 1, Vector2f(80, 32));
-    NF_LoadRawSound("sound/LimitedPossibility", 31, 11025, 0);
-    NF_PlayRawSound(31, 127, 64, 1, 0);
 }
 
 void IPSelectLevel::handleInput(InputHandler& input) {
