@@ -17,6 +17,7 @@ void ControlRoomLevel::load() {
     buttonGrid.load(0, 0, 0, 0, 0, 0, 1, Vector2f(0, 32), Vector2i(5, 4), sock);
     keypad.load(1, 1, 1, 1, 20, 1, 1, Vector2f(160, 32), sock);
     codeDisplay.load(2, 2, 2, 2, 32, 1, Vector2f(160, 8));
+    NF_LoadRawSound("sound/Goodbye", 31, 11025, 0);
 }
 
 void ControlRoomLevel::handleInput(InputHandler &input) {
@@ -70,6 +71,10 @@ void ControlRoomLevel::handleNetwork() {
         while (recv(sock, &receivedData, 1, NULL) == 1) {
             switch (receivedData) {
                 case 255: {
+                    NF_PlayRawSound(31, 127, 64, false, 0);
+                    for (int timer = 0; timer < 120; timer++) {
+                        swiWaitForVBlank();
+                    }
                     Level* ipSelectLevel = new IPSelectLevel(levelHandler);
                     levelHandler->loadLevel(ipSelectLevel);
                     break;
@@ -93,4 +98,5 @@ void ControlRoomLevel::unload() {
     buttonGrid.unload();
     keypad.unload();
     codeDisplay.unload();
+    NF_UnloadRawSound(31);
 }
