@@ -6492,140 +6492,140 @@ Linker script and memory map
                 0x0200230c                ControlRoomLevel::handleNetwork()
                 0x0200245c                ControlRoomLevel::~ControlRoomLevel()
                 0x0200245c                ControlRoomLevel::~ControlRoomLevel()
- .text          0x02002534      0x3d0 HealthDisplay.o
+ .text          0x02002534      0x3d4 HealthDisplay.o
                 0x02002534                HealthDisplay::load(int, int, int, int, int, int, Vector2f)
                 0x020026a8                HealthDisplay::render(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
-                0x020028b8                HealthDisplay::unload()
- .text          0x02002904       0x3c InputHandler.o
-                0x02002904                InputHandler::updateKeys()
-                0x02002924                InputHandler::getKeysLastFrame()
-                0x0200292c                InputHandler::getKeysThisFrame()
-                0x02002934                InputHandler::getKeysPressed()
- .text          0x02002940      0x9c8 IPKeypad.o
-                0x02002a14                IPKeyPad::handleInput(InputHandler&)
-                0x02002cc4                IPKeyPad::unload()
-                0x02002d74                IPKeyPad::load(int, int, int, int, int, int, int, Vector2f)
- .text          0x02003308      0x480 IPSelectLevel.o
-                0x02003308                IPSelectLevel::handleNetwork()
-                0x02003308                IPSelectLevel::postRender()
-                0x02003308                IPSelectLevel::update()
-                0x0200330c                IPSelectLevel::load()
-                0x020033b8                IPSelectLevel::unload()
-                0x020033f0                IPSelectLevel::render()
-                0x02003544                IPSelectLevel::IPSelectLevel(LevelHandler*)
-                0x02003544                IPSelectLevel::IPSelectLevel(LevelHandler*)
-                0x02003590                IPSelectLevel::~IPSelectLevel()
-                0x02003590                IPSelectLevel::~IPSelectLevel()
-                0x02003610                IPSelectLevel::networkInit()
-                0x02003720                IPSelectLevel::handleInput(InputHandler&)
- .text          0x02003788       0x38 Level.o
-                0x02003788                Level::load()
-                0x02003788                Level::render()
-                0x02003788                Level::postRender()
-                0x02003788                Level::update()
-                0x02003788                Level::unload()
-                0x02003788                Level::handleNetwork()
-                0x0200378c                Level::handleInput(InputHandler&)
-                0x02003790                Level::Level(LevelHandler*)
-                0x02003790                Level::Level(LevelHandler*)
-                0x020037bc                Level::~Level()
-                0x020037bc                Level::~Level()
- .text          0x020037c0       0x6c LevelHandler.o
-                0x020037c0                LevelHandler::handleLevelSwaps()
- .text          0x0200382c       0x5c NFInitialisation.o
-                0x0200382c                initGFX()
- .text          0x02003888      0x13c WinScreenLevel.o
-                0x02003888                WinScreenLevel::handleInput(InputHandler&)
-                0x0200388c                WinScreenLevel::postRender()
-                0x0200388c                WinScreenLevel::handleNetwork()
-                0x0200388c                WinScreenLevel::render()
-                0x02003890                WinScreenLevel::load()
-                0x0200390c                WinScreenLevel::unload()
-                0x02003934                WinScreenLevel::update()
-                0x0200397c                WinScreenLevel::WinScreenLevel(LevelHandler*)
-                0x0200397c                WinScreenLevel::WinScreenLevel(LevelHandler*)
-                0x020039a4                WinScreenLevel::~WinScreenLevel()
-                0x020039a4                WinScreenLevel::~WinScreenLevel()
- .text          0x020039c4      0x65c C:/devkitPro/nflib/lib\libnflib.a(nf_2d.o)
-                0x020039c4                NF_Set2D
-                0x02003a28                NF_ShowBg
-                0x02003a9c                NF_HideBg
-                0x02003b38                NF_ScrollBg
-                0x02003e34                NF_SpriteFrame
-                0x02003eec                NF_EnableSpriteRotScale
-                0x02003f58                NF_DisableSpriteRotScale
-                0x02003fb4                NF_SpriteRotScale
- .text          0x02004020      0x624 C:/devkitPro/nflib/lib\libnflib.a(nf_basic.o)
-                0x02004020                NF_Error
-                0x02004308                NF_SetRootFolder
-                0x020044e4                NF_DmaMemCopy
-                0x02004568                NF_FileLoad
-                0x02004614                NF_FileExists
- .text          0x02004644      0x1f0 C:/devkitPro/nflib/lib\libnflib.a(nf_sound.o)
-                0x02004644                NF_InitRawSoundBuffers
-                0x02004678                NF_ResetRawSoundBuffers
-                0x020046bc                NF_LoadRawSound
-                0x02004770                NF_UnloadRawSound
-                0x020047cc                NF_PlayRawSound
- .text          0x02004834      0xf6c C:/devkitPro/nflib/lib\libnflib.a(nf_sprite256.o)
-                0x02004834                NF_InitSpriteBuffers
-                0x02004890                NF_ResetSpriteBuffers
-                0x020048c4                NF_InitSpriteSys
-                0x02004ac8                NF_LoadSpriteGfx
-                0x02004b60                NF_UnloadSpriteGfx
-                0x02004bc4                NF_LoadSpritePal
-                0x02004c44                NF_UnloadSpritePal
-                0x02004ca0                NF_VramSpriteGfx
-                0x02004f38                NF_VramSpriteGfxDefrag
-                0x02005154                NF_FreeSpriteGfx
-                0x02005230                NF_VramSpritePal
-                0x020052e0                NF_CreateSprite
-                0x020054a8                NF_DeleteSprite
-                0x02005528                NF_SpriteOamSet
-                0x020055ec                NF_SpriteSetPalColor
-                0x0200566c                NF_SpriteEditPalColor
-                0x020056c0                NF_SpriteUpdatePalette
-                0x02005748                NF_SpriteGetPalColor
- .text          0x020057a0      0x6e8 C:/devkitPro/nflib/lib\libnflib.a(nf_text.o)
-                0x020057a0                NF_InitTextSys
-                0x020057d4                NF_LoadTextFont
-                0x020059a4                NF_UnloadTextFont
-                0x020059ac                NF_CreateTextLayer
-                0x02005a38                NF_DeleteTextLayer
-                0x02005a70                NF_WriteText
-                0x02005d68                NF_UpdateTextLayers
-                0x02005db4                NF_ClearTextLayer
-                0x02005e00                NF_DefineTextColor
- .text          0x02005e88     0x154c C:/devkitPro/nflib/lib\libnflib.a(nf_tiledbg.o)
-                0x02005e88                NF_InitTiledBgBuffers
-                0x02005f1c                NF_ResetTiledBgBuffers
-                0x02005f78                NF_InitTiledBgSys
-                0x020060d8                NF_LoadTiledBg
-                0x02006284                NF_LoadTilesForBg
-                0x02006458                NF_UnloadTiledBg
-                0x020064f4                NF_DeleteTiledBg
-                0x02006680                NF_CreateTiledBg
-                0x02006bec                NF_GetTileMapAddress
-                0x02006c74                NF_GetTileOfMap
-                0x02006cb0                NF_SetTileOfMap
-                0x02006cf0                NF_UpdateVramMap
-                0x02006de8                NF_BgSetPalColor
-                0x02006e7c                NF_BgEditPalColor
-                0x02006ee8                NF_BgUpdatePalette
-                0x02006f8c                NF_BgGetPalColor
-                0x02006ffc                NF_GetTilePal
-                0x02007030                NF_SetTilePal
-                0x02007070                NF_LoadExBgPal
-                0x020070d0                NF_UnloadExBgPal
-                0x02007114                NF_VramExBgPal
-                0x020071a0                NF_SetExBgPal
-                0x02007260                NF_SetTileHflip
-                0x02007298                NF_SetTileVflip
-                0x020072d0                NF_RotateTileGfx
- .text          0x020073d4       0x5c C:/devkitPro/libnds/lib\libdswifi9.a(spinlock.o)
-                0x020073d4                SLasm_Acquire
-                0x02007408                SLasm_Release
- *fill*         0x02007430       0x10 ff
+                0x020028bc                HealthDisplay::unload()
+ .text          0x02002908       0x3c InputHandler.o
+                0x02002908                InputHandler::updateKeys()
+                0x02002928                InputHandler::getKeysLastFrame()
+                0x02002930                InputHandler::getKeysThisFrame()
+                0x02002938                InputHandler::getKeysPressed()
+ .text          0x02002944      0x9c8 IPKeypad.o
+                0x02002a18                IPKeyPad::handleInput(InputHandler&)
+                0x02002cc8                IPKeyPad::unload()
+                0x02002d78                IPKeyPad::load(int, int, int, int, int, int, int, Vector2f)
+ .text          0x0200330c      0x480 IPSelectLevel.o
+                0x0200330c                IPSelectLevel::handleNetwork()
+                0x0200330c                IPSelectLevel::postRender()
+                0x0200330c                IPSelectLevel::update()
+                0x02003310                IPSelectLevel::load()
+                0x020033bc                IPSelectLevel::unload()
+                0x020033f4                IPSelectLevel::render()
+                0x02003548                IPSelectLevel::IPSelectLevel(LevelHandler*)
+                0x02003548                IPSelectLevel::IPSelectLevel(LevelHandler*)
+                0x02003594                IPSelectLevel::~IPSelectLevel()
+                0x02003594                IPSelectLevel::~IPSelectLevel()
+                0x02003614                IPSelectLevel::networkInit()
+                0x02003724                IPSelectLevel::handleInput(InputHandler&)
+ .text          0x0200378c       0x38 Level.o
+                0x0200378c                Level::load()
+                0x0200378c                Level::render()
+                0x0200378c                Level::postRender()
+                0x0200378c                Level::update()
+                0x0200378c                Level::unload()
+                0x0200378c                Level::handleNetwork()
+                0x02003790                Level::handleInput(InputHandler&)
+                0x02003794                Level::Level(LevelHandler*)
+                0x02003794                Level::Level(LevelHandler*)
+                0x020037c0                Level::~Level()
+                0x020037c0                Level::~Level()
+ .text          0x020037c4       0x6c LevelHandler.o
+                0x020037c4                LevelHandler::handleLevelSwaps()
+ .text          0x02003830       0x5c NFInitialisation.o
+                0x02003830                initGFX()
+ .text          0x0200388c      0x13c WinScreenLevel.o
+                0x0200388c                WinScreenLevel::handleInput(InputHandler&)
+                0x02003890                WinScreenLevel::postRender()
+                0x02003890                WinScreenLevel::handleNetwork()
+                0x02003890                WinScreenLevel::render()
+                0x02003894                WinScreenLevel::load()
+                0x02003910                WinScreenLevel::unload()
+                0x02003938                WinScreenLevel::update()
+                0x02003980                WinScreenLevel::WinScreenLevel(LevelHandler*)
+                0x02003980                WinScreenLevel::WinScreenLevel(LevelHandler*)
+                0x020039a8                WinScreenLevel::~WinScreenLevel()
+                0x020039a8                WinScreenLevel::~WinScreenLevel()
+ .text          0x020039c8      0x65c C:/devkitPro/nflib/lib\libnflib.a(nf_2d.o)
+                0x020039c8                NF_Set2D
+                0x02003a2c                NF_ShowBg
+                0x02003aa0                NF_HideBg
+                0x02003b3c                NF_ScrollBg
+                0x02003e38                NF_SpriteFrame
+                0x02003ef0                NF_EnableSpriteRotScale
+                0x02003f5c                NF_DisableSpriteRotScale
+                0x02003fb8                NF_SpriteRotScale
+ .text          0x02004024      0x624 C:/devkitPro/nflib/lib\libnflib.a(nf_basic.o)
+                0x02004024                NF_Error
+                0x0200430c                NF_SetRootFolder
+                0x020044e8                NF_DmaMemCopy
+                0x0200456c                NF_FileLoad
+                0x02004618                NF_FileExists
+ .text          0x02004648      0x1f0 C:/devkitPro/nflib/lib\libnflib.a(nf_sound.o)
+                0x02004648                NF_InitRawSoundBuffers
+                0x0200467c                NF_ResetRawSoundBuffers
+                0x020046c0                NF_LoadRawSound
+                0x02004774                NF_UnloadRawSound
+                0x020047d0                NF_PlayRawSound
+ .text          0x02004838      0xf6c C:/devkitPro/nflib/lib\libnflib.a(nf_sprite256.o)
+                0x02004838                NF_InitSpriteBuffers
+                0x02004894                NF_ResetSpriteBuffers
+                0x020048c8                NF_InitSpriteSys
+                0x02004acc                NF_LoadSpriteGfx
+                0x02004b64                NF_UnloadSpriteGfx
+                0x02004bc8                NF_LoadSpritePal
+                0x02004c48                NF_UnloadSpritePal
+                0x02004ca4                NF_VramSpriteGfx
+                0x02004f3c                NF_VramSpriteGfxDefrag
+                0x02005158                NF_FreeSpriteGfx
+                0x02005234                NF_VramSpritePal
+                0x020052e4                NF_CreateSprite
+                0x020054ac                NF_DeleteSprite
+                0x0200552c                NF_SpriteOamSet
+                0x020055f0                NF_SpriteSetPalColor
+                0x02005670                NF_SpriteEditPalColor
+                0x020056c4                NF_SpriteUpdatePalette
+                0x0200574c                NF_SpriteGetPalColor
+ .text          0x020057a4      0x6e8 C:/devkitPro/nflib/lib\libnflib.a(nf_text.o)
+                0x020057a4                NF_InitTextSys
+                0x020057d8                NF_LoadTextFont
+                0x020059a8                NF_UnloadTextFont
+                0x020059b0                NF_CreateTextLayer
+                0x02005a3c                NF_DeleteTextLayer
+                0x02005a74                NF_WriteText
+                0x02005d6c                NF_UpdateTextLayers
+                0x02005db8                NF_ClearTextLayer
+                0x02005e04                NF_DefineTextColor
+ .text          0x02005e8c     0x154c C:/devkitPro/nflib/lib\libnflib.a(nf_tiledbg.o)
+                0x02005e8c                NF_InitTiledBgBuffers
+                0x02005f20                NF_ResetTiledBgBuffers
+                0x02005f7c                NF_InitTiledBgSys
+                0x020060dc                NF_LoadTiledBg
+                0x02006288                NF_LoadTilesForBg
+                0x0200645c                NF_UnloadTiledBg
+                0x020064f8                NF_DeleteTiledBg
+                0x02006684                NF_CreateTiledBg
+                0x02006bf0                NF_GetTileMapAddress
+                0x02006c78                NF_GetTileOfMap
+                0x02006cb4                NF_SetTileOfMap
+                0x02006cf4                NF_UpdateVramMap
+                0x02006dec                NF_BgSetPalColor
+                0x02006e80                NF_BgEditPalColor
+                0x02006eec                NF_BgUpdatePalette
+                0x02006f90                NF_BgGetPalColor
+                0x02007000                NF_GetTilePal
+                0x02007034                NF_SetTilePal
+                0x02007074                NF_LoadExBgPal
+                0x020070d4                NF_UnloadExBgPal
+                0x02007118                NF_VramExBgPal
+                0x020071a4                NF_SetExBgPal
+                0x02007264                NF_SetTileHflip
+                0x0200729c                NF_SetTileVflip
+                0x020072d4                NF_RotateTileGfx
+ .text          0x020073d8       0x5c C:/devkitPro/libnds/lib\libdswifi9.a(spinlock.o)
+                0x020073d8                SLasm_Acquire
+                0x0200740c                SLasm_Release
+ *fill*         0x02007434        0xc ff
  .text          0x02007440     0x4000 C:/devkitPro/libnds/lib\libnds9.a(dldi_stub.o)
                 0x02007440                _io_dldi_stub
  .text          0x0200b440       0x14 C:/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/14.2.0\libgcc.a(_thumb1_case_uqi.o)
@@ -10897,7 +10897,7 @@ ARM.exidx       0x020387a8      0x270
  .debug_abbrev  0x00010a03      0x3be C:/devkitPro/libnds/lib\libnds9.a(sprite_alloc.o)
  .debug_abbrev  0x00010dc1      0x322 C:/devkitPro/libnds/lib\libnds9.a(system.o)
 
-.debug_line     0x00000000    0x2c040
+.debug_line     0x00000000    0x2c042
  *(.debug_line)
  .debug_line    0x00000000     0x16fc ButtonGrid.o
  .debug_line    0x000016fc      0x794 CodeDisplay.o
@@ -10905,71 +10905,71 @@ ARM.exidx       0x020387a8      0x270
  .debug_line    0x0000213e      0x2ca CollisionCircle.o
  .debug_line    0x00002408     0x1ad4 ControlRoomKeypad.o
  .debug_line    0x00003edc     0x168b ControlRoomLevel.o
- .debug_line    0x00005567      0xba5 HealthDisplay.o
- .debug_line    0x0000610c      0x35a InputHandler.o
- .debug_line    0x00006466     0x192c IPKeypad.o
- .debug_line    0x00007d92     0x123a IPSelectLevel.o
- .debug_line    0x00008fcc      0x384 Level.o
- .debug_line    0x00009350      0x359 LevelHandler.o
- .debug_line    0x000096a9      0x719 main.o
- .debug_line    0x00009dc2      0x3cb NFInitialisation.o
- .debug_line    0x0000a18d      0x5e0 WinScreenLevel.o
- .debug_line    0x0000a76d      0x86e C:/devkitPro/nflib/lib\libnflib.a(nf_2d.o)
- .debug_line    0x0000afdb      0x6be C:/devkitPro/nflib/lib\libnflib.a(nf_basic.o)
- .debug_line    0x0000b699      0x423 C:/devkitPro/nflib/lib\libnflib.a(nf_sound.o)
- .debug_line    0x0000babc     0x1297 C:/devkitPro/nflib/lib\libnflib.a(nf_sprite256.o)
- .debug_line    0x0000cd53      0xb03 C:/devkitPro/nflib/lib\libnflib.a(nf_text.o)
- .debug_line    0x0000d856     0x1bab C:/devkitPro/nflib/lib\libnflib.a(nf_tiledbg.o)
- .debug_line    0x0000f401     0x101a C:/devkitPro/libnds/lib\libfilesystem.a(nitrofs.o)
- .debug_line    0x0001041b      0x784 C:/devkitPro/libnds/lib\libfat.a(libfat.o)
- .debug_line    0x00010b9f      0x141 C:/devkitPro/libnds/lib\libfat.a(disc.o)
- .debug_line    0x00010ce0     0x2050 C:/devkitPro/libnds/lib\libfat.a(fatfile.o)
- .debug_line    0x00012d30      0xb85 C:/devkitPro/libnds/lib\libfat.a(cache.o)
- .debug_line    0x000138b5     0x1043 C:/devkitPro/libnds/lib\libfat.a(fatdir.o)
- .debug_line    0x000148f8     0x2028 C:/devkitPro/libnds/lib\libfat.a(directory.o)
- .debug_line    0x00016920      0xec2 C:/devkitPro/libnds/lib\libfat.a(partition.o)
- .debug_line    0x000177e2       0x87 C:/devkitPro/libnds/lib\libfat.a(lock.o)
- .debug_line    0x00017869      0x276 C:/devkitPro/libnds/lib\libfat.a(filetime.o)
- .debug_line    0x00017adf      0x895 C:/devkitPro/libnds/lib\libfat.a(file_allocation_table.o)
- .debug_line    0x00018374      0x566 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_Hub.o)
- .debug_line    0x000188da      0x706 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_memblock.o)
- .debug_line    0x00018fe0     0x1c76 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_sockets.o)
- .debug_line    0x0001ac56     0x1ee3 C:/devkitPro/libnds/lib\libdswifi9.a(wifi_arm9.o)
- .debug_line    0x0001cb39      0xb8b C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_ARP.o)
- .debug_line    0x0001d6c4      0x36e C:/devkitPro/libnds/lib\libdswifi9.a(sgIP.o)
- .debug_line    0x0001da32      0xa93 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_UDP.o)
- .debug_line    0x0001e4c5      0xda6 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_DHCP.o)
- .debug_line    0x0001f26b       0xa0 C:/devkitPro/libnds/lib\libdswifi9.a(spinlock.o)
- .debug_line    0x0001f30b     0x12d2 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_DNS.o)
- .debug_line    0x000205dd     0x1c49 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_TCP.o)
- .debug_line    0x00022226      0x42c C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_IP.o)
- .debug_line    0x00022652      0x297 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_ICMP.o)
- .debug_line    0x000228e9     0x1449 C:/devkitPro/libnds/lib\libnds9.a(console.o)
- .debug_line    0x00023d32      0x407 C:/devkitPro/libnds/lib\libnds9.a(keys.o)
- .debug_line    0x00024139      0x5bf C:/devkitPro/libnds/lib\libnds9.a(sound.o)
- .debug_line    0x000246f8      0x771 C:/devkitPro/libnds/lib\libnds9.a(sprite.o)
- .debug_line    0x00024e69      0x324 C:/devkitPro/libnds/lib\libnds9.a(touch.o)
- .debug_line    0x0002518d      0x7c1 C:/devkitPro/libnds/lib\libnds9.a(trig.o)
- .debug_line    0x0002594e      0x4fd C:/devkitPro/libnds/lib\libnds9.a(video.o)
- .debug_line    0x00025e4b      0x789 C:/devkitPro/libnds/lib\libnds9.a(dldi.o)
- .debug_line    0x000265d4      0x457 C:/devkitPro/libnds/lib\libnds9.a(sd.twl.o)
- .debug_line    0x00026a2b      0x5e7 C:/devkitPro/libnds/lib\libnds9.a(initSystem.o)
- .debug_line    0x00027012       0x8f C:/devkitPro/libnds/lib\libnds9.a(securearea.o)
- .debug_line    0x000270a1      0x6e4 C:/devkitPro/libnds/lib\libnds9.a(card.o)
- .debug_line    0x00027785     0x1445 C:/devkitPro/libnds/lib\libnds9.a(fifosystem.o)
- .debug_line    0x00028bca      0x5a2 C:/devkitPro/libnds/lib\libnds9.a(interrupts.o)
- .debug_line    0x0002916c      0x233 C:/devkitPro/libnds/lib\libnds9.a(libnds_exit.arm.o)
- .debug_line    0x0002939f       0x96 C:/devkitPro/libnds/lib\libnds9.a(dcache.o)
- .debug_line    0x00029435       0x4c C:/devkitPro/libnds/lib\libnds9.a(dldi_stub.o)
- .debug_line    0x00029481       0x5c C:/devkitPro/libnds/lib\libnds9.a(cpu_clock.o)
- .debug_line    0x000294dd       0x74 C:/devkitPro/libnds/lib\libnds9.a(IntrWait.o)
- .debug_line    0x00029551       0xe8 C:/devkitPro/libnds/lib\libnds9.a(mpu_setup.o)
- .debug_line    0x00029639      0x1b0 C:/devkitPro/libnds/lib\libnds9.a(biosCalls.o)
- .debug_line    0x000297e9       0x80 C:/devkitPro/libnds/lib\libnds9.a(interruptDispatcher.o)
- .debug_line    0x00029869       0x57 C:/devkitPro/libnds/lib\libnds9.a(swiSoftReset.o)
- .debug_line    0x000298c0      0x676 C:/devkitPro/libnds/lib\libnds9.a(background.o)
- .debug_line    0x00029f36     0x1c2b C:/devkitPro/libnds/lib\libnds9.a(sprite_alloc.o)
- .debug_line    0x0002bb61      0x4df C:/devkitPro/libnds/lib\libnds9.a(system.o)
+ .debug_line    0x00005567      0xba7 HealthDisplay.o
+ .debug_line    0x0000610e      0x35a InputHandler.o
+ .debug_line    0x00006468     0x192c IPKeypad.o
+ .debug_line    0x00007d94     0x123a IPSelectLevel.o
+ .debug_line    0x00008fce      0x384 Level.o
+ .debug_line    0x00009352      0x359 LevelHandler.o
+ .debug_line    0x000096ab      0x719 main.o
+ .debug_line    0x00009dc4      0x3cb NFInitialisation.o
+ .debug_line    0x0000a18f      0x5e0 WinScreenLevel.o
+ .debug_line    0x0000a76f      0x86e C:/devkitPro/nflib/lib\libnflib.a(nf_2d.o)
+ .debug_line    0x0000afdd      0x6be C:/devkitPro/nflib/lib\libnflib.a(nf_basic.o)
+ .debug_line    0x0000b69b      0x423 C:/devkitPro/nflib/lib\libnflib.a(nf_sound.o)
+ .debug_line    0x0000babe     0x1297 C:/devkitPro/nflib/lib\libnflib.a(nf_sprite256.o)
+ .debug_line    0x0000cd55      0xb03 C:/devkitPro/nflib/lib\libnflib.a(nf_text.o)
+ .debug_line    0x0000d858     0x1bab C:/devkitPro/nflib/lib\libnflib.a(nf_tiledbg.o)
+ .debug_line    0x0000f403     0x101a C:/devkitPro/libnds/lib\libfilesystem.a(nitrofs.o)
+ .debug_line    0x0001041d      0x784 C:/devkitPro/libnds/lib\libfat.a(libfat.o)
+ .debug_line    0x00010ba1      0x141 C:/devkitPro/libnds/lib\libfat.a(disc.o)
+ .debug_line    0x00010ce2     0x2050 C:/devkitPro/libnds/lib\libfat.a(fatfile.o)
+ .debug_line    0x00012d32      0xb85 C:/devkitPro/libnds/lib\libfat.a(cache.o)
+ .debug_line    0x000138b7     0x1043 C:/devkitPro/libnds/lib\libfat.a(fatdir.o)
+ .debug_line    0x000148fa     0x2028 C:/devkitPro/libnds/lib\libfat.a(directory.o)
+ .debug_line    0x00016922      0xec2 C:/devkitPro/libnds/lib\libfat.a(partition.o)
+ .debug_line    0x000177e4       0x87 C:/devkitPro/libnds/lib\libfat.a(lock.o)
+ .debug_line    0x0001786b      0x276 C:/devkitPro/libnds/lib\libfat.a(filetime.o)
+ .debug_line    0x00017ae1      0x895 C:/devkitPro/libnds/lib\libfat.a(file_allocation_table.o)
+ .debug_line    0x00018376      0x566 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_Hub.o)
+ .debug_line    0x000188dc      0x706 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_memblock.o)
+ .debug_line    0x00018fe2     0x1c76 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_sockets.o)
+ .debug_line    0x0001ac58     0x1ee3 C:/devkitPro/libnds/lib\libdswifi9.a(wifi_arm9.o)
+ .debug_line    0x0001cb3b      0xb8b C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_ARP.o)
+ .debug_line    0x0001d6c6      0x36e C:/devkitPro/libnds/lib\libdswifi9.a(sgIP.o)
+ .debug_line    0x0001da34      0xa93 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_UDP.o)
+ .debug_line    0x0001e4c7      0xda6 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_DHCP.o)
+ .debug_line    0x0001f26d       0xa0 C:/devkitPro/libnds/lib\libdswifi9.a(spinlock.o)
+ .debug_line    0x0001f30d     0x12d2 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_DNS.o)
+ .debug_line    0x000205df     0x1c49 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_TCP.o)
+ .debug_line    0x00022228      0x42c C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_IP.o)
+ .debug_line    0x00022654      0x297 C:/devkitPro/libnds/lib\libdswifi9.a(sgIP_ICMP.o)
+ .debug_line    0x000228eb     0x1449 C:/devkitPro/libnds/lib\libnds9.a(console.o)
+ .debug_line    0x00023d34      0x407 C:/devkitPro/libnds/lib\libnds9.a(keys.o)
+ .debug_line    0x0002413b      0x5bf C:/devkitPro/libnds/lib\libnds9.a(sound.o)
+ .debug_line    0x000246fa      0x771 C:/devkitPro/libnds/lib\libnds9.a(sprite.o)
+ .debug_line    0x00024e6b      0x324 C:/devkitPro/libnds/lib\libnds9.a(touch.o)
+ .debug_line    0x0002518f      0x7c1 C:/devkitPro/libnds/lib\libnds9.a(trig.o)
+ .debug_line    0x00025950      0x4fd C:/devkitPro/libnds/lib\libnds9.a(video.o)
+ .debug_line    0x00025e4d      0x789 C:/devkitPro/libnds/lib\libnds9.a(dldi.o)
+ .debug_line    0x000265d6      0x457 C:/devkitPro/libnds/lib\libnds9.a(sd.twl.o)
+ .debug_line    0x00026a2d      0x5e7 C:/devkitPro/libnds/lib\libnds9.a(initSystem.o)
+ .debug_line    0x00027014       0x8f C:/devkitPro/libnds/lib\libnds9.a(securearea.o)
+ .debug_line    0x000270a3      0x6e4 C:/devkitPro/libnds/lib\libnds9.a(card.o)
+ .debug_line    0x00027787     0x1445 C:/devkitPro/libnds/lib\libnds9.a(fifosystem.o)
+ .debug_line    0x00028bcc      0x5a2 C:/devkitPro/libnds/lib\libnds9.a(interrupts.o)
+ .debug_line    0x0002916e      0x233 C:/devkitPro/libnds/lib\libnds9.a(libnds_exit.arm.o)
+ .debug_line    0x000293a1       0x96 C:/devkitPro/libnds/lib\libnds9.a(dcache.o)
+ .debug_line    0x00029437       0x4c C:/devkitPro/libnds/lib\libnds9.a(dldi_stub.o)
+ .debug_line    0x00029483       0x5c C:/devkitPro/libnds/lib\libnds9.a(cpu_clock.o)
+ .debug_line    0x000294df       0x74 C:/devkitPro/libnds/lib\libnds9.a(IntrWait.o)
+ .debug_line    0x00029553       0xe8 C:/devkitPro/libnds/lib\libnds9.a(mpu_setup.o)
+ .debug_line    0x0002963b      0x1b0 C:/devkitPro/libnds/lib\libnds9.a(biosCalls.o)
+ .debug_line    0x000297eb       0x80 C:/devkitPro/libnds/lib\libnds9.a(interruptDispatcher.o)
+ .debug_line    0x0002986b       0x57 C:/devkitPro/libnds/lib\libnds9.a(swiSoftReset.o)
+ .debug_line    0x000298c2      0x676 C:/devkitPro/libnds/lib\libnds9.a(background.o)
+ .debug_line    0x00029f38     0x1c2b C:/devkitPro/libnds/lib\libnds9.a(sprite_alloc.o)
+ .debug_line    0x0002bb63      0x4df C:/devkitPro/libnds/lib\libnds9.a(system.o)
 
 .debug_frame    0x00000000     0x40f4
  *(.debug_frame)

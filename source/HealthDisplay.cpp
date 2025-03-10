@@ -28,9 +28,9 @@ void HealthDisplay::render(std::string health) {
         NF_SpriteFrame(screenId, startSprId + i, 11);
     }
     if (health.length() <= 4 && health.length() > 0) {
-        for (int i = 1; i < health.length(); i++) {
+        for (int i = 0; i < health.length(); i++) {
             char number = health[i];
-            NF_SpriteFrame(screenId, startSprId + i, std::atoi(&number));
+            NF_SpriteFrame(screenId, startSprId + 1 + i, std::atoi(&number));
         }
     }
 }
